@@ -27,10 +27,14 @@
         Top arc: clockwise → text renders above arc (outside).
         Bottom arc: CCW → dy pushes text below arc (outside).
       -->
+      <img id="img-default" class="buomie-img" src="assets/buomie-default.png" alt="Buomie" />
+      <img id="img-smile"   class="buomie-img" src="assets/Buomie-Smile.png"   alt="Buomie smiling" />
+
+      <!-- SVG after images so text renders on top -->
       <svg class="text-svg" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <path id="topArc"    d="M 70,320 A 250,250 0 0,1 570,320" />
-          <path id="bottomArc" d="M 70,320 A 250,250 0 0,0 570,320" />
+          <path id="topArc"    d="M 40,320 A 280,280 0 0,1 600,320" />
+          <path id="bottomArc" d="M 40,320 A 280,280 0 0,0 600,320" />
         </defs>
 
         <text>
@@ -45,9 +49,6 @@
           </textPath>
         </text>
       </svg>
-
-      <img id="img-default" class="buomie-img" src="assets/buomie-default.png" alt="Buomie" />
-      <img id="img-smile"   class="buomie-img" src="assets/Buomie-Smile.png"   alt="Buomie smiling" />
     </div>
 
     <div id="scroll-hint">

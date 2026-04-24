@@ -32,8 +32,8 @@ body.revealed {
 /* Square wrapper so the SVG arc aligns with the image */
 .image-wrapper {
   position: relative;
-  width: min(88vw, min(74vh, 700px));
-  height: min(88vw, min(74vh, 700px));
+  width: min(96vw, min(86vh, 920px));
+  height: min(96vw, min(86vh, 920px));
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;

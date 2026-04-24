@@ -139,7 +139,6 @@ body.revealed #scroll-hint { opacity: 1; }
   top: 48px;
   right: 24px;
   width: 100px;
-  fill: #111;
 }
 
 .letter .date {

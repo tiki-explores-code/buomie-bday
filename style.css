@@ -125,12 +125,21 @@ body.revealed #scroll-hint { opacity: 1; }
 }
 
 .letter {
+  position: relative;
   max-width: 620px;
   width: 100%;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.1rem;
   line-height: 1.9;
   color: #111;
+}
+
+.letter-nike {
+  position: absolute;
+  top: 48px;
+  right: 24px;
+  width: 100px;
+  fill: #111;
 }
 
 .letter .date {

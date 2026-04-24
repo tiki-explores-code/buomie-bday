@@ -128,7 +128,7 @@ body.revealed #scroll-hint { opacity: 1; }
   position: relative;
   max-width: 620px;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 1.1rem;
   line-height: 1.9;
   color: #111;

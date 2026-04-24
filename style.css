@@ -51,7 +51,9 @@ body.revealed {
   pointer-events: none;
 }
 
-#img-default { opacity: 1; }
+#img-default { opacity: 1; transition: opacity 0.7s ease, transform 0.3s ease; }
+
+.image-wrapper:hover #img-default { transform: scale(1.06); }
 #img-smile   { opacity: 0; width: 82%; height: 82%; top: 9%; left: 9%; }
 
 body.revealed #img-default { opacity: 0; }

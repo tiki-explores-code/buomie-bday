@@ -52,7 +52,7 @@ body.revealed {
 }
 
 #img-default { opacity: 1; }
-#img-smile   { opacity: 0; }
+#img-smile   { opacity: 0; width: 82%; height: 82%; top: 9%; left: 9%; }
 
 body.revealed #img-default { opacity: 0; }
 body.revealed #img-smile   { opacity: 1; }

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Buomie!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Confetti */
+    .confetti-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+    }
+
+    /* Main card */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 32px;
+      padding: 48px 56px;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.6rem;
+      color: #ffd700;
+      text-shadow: 0 2px 12px rgba(255,215,0,0.4);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Buomie face */
+    .face-wrap {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin-bottom: 32px;
+    }
+
+    .face-wrap img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      display: block;
+    }
+
+    .face-default { opacity: 1; }
+    .face-smile  {
+      opacity: 0;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .face-wrap:hover .face-default,
+    .face-wrap:focus .face-default { opacity: 0; transform: scale(0.95); }
+    .face-wrap:hover .face-smile,
+    .face-wrap:focus .face-smile  { opacity: 1; transform: scale(1.05); }
+
+    .hover-hint {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: -20px;
+      margin-bottom: 28px;
+    }
+
+    .message {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .message strong {
+      color: #ffd700;
+    }
+
+    .balloons {
+      font-size: 2rem;
+      margin-top: 24px;
+      letter-spacing: 0.15em;
+      animation: bounce 1.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="confetti-container" id="confetti"></div>
+
+  <div class="card">
+    <h1>Happy Birthday,<br>Buomie!</h1>
+    <p class="subtitle">wishing you the best day ever</p>
+
+    <div class="face-wrap" tabindex="0" aria-label="Hover to see Buomie smile">
+      <img class="face-default" src="assets/buomie-default.png" alt="Buomie" />
+      <img class="face-smile"   src="assets/Buomie-Smile.png"   alt="Buomie smiling" />
+    </div>
+
+    <p class="hover-hint">hover for a surprise</p>
+
+    <p class="message">
+      Here's to you — another year of being<br>
+      <strong>absolutely legendary.</strong><br><br>
+      May today be as great as you are.
+    </p>
+
+    <div class="balloons">🎈 🎂 🎉</div>
+  </div>
+
+  <script>
+    // Generate confetti
+    const colors = ['#ffd700','#ff6b9d','#c77dff','#48cae4','#f77f00','#80ffdb'];
+    const shapes = ['circle','square','triangle'];
+    const container = document.getElementById('confetti');
+
+    for (let i = 0; i < 60; i++) {
+      const el = document.createElement('div');
+      el.classList.add('confetti');
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+      const size = Math.random() * 10 + 6;
+      const left = Math.random() * 100;
+      const delay = Math.random() * 6;
+      const duration = Math.random() * 4 + 4;
+
+      el.style.left = left + 'vw';
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.background = color;
+      el.style.animationDelay = delay + 's';
+      el.style.animationDuration = duration + 's';
+
+      if (shape === 'circle')   el.style.borderRadius = '50%';
+      if (shape === 'triangle') {
+        el.style.background = 'transparent';
+        el.style.borderLeft   = (size/2) + 'px solid transparent';
+        el.style.borderRight  = (size/2) + 'px solid transparent';
+        el.style.borderBottom = size + 'px solid ' + color;
+        el.style.width = '0'; el.style.height = '0';
+      }
+
+      container.appendChild(el);
+    }
+  </script>
+</body>
+</html>

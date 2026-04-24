@@ -65,9 +65,7 @@ body.revealed #img-smile   { opacity: 1; }
 */
 .text-svg {
   position: absolute;
-  inset: -20%;
-  width: 140%;
-  height: 140%;
+  inset: 0;
   opacity: 0;
   transition: opacity 0.9s ease 0.3s;
   pointer-events: none;
@@ -77,10 +75,10 @@ body.revealed #img-smile   { opacity: 1; }
 body.revealed .text-svg { opacity: 1; }
 
 .text-svg text {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Russo One', sans-serif;
   fill: #000;
-  font-size: 68px;
-  letter-spacing: 8px;
+  font-size: 62px;
+  letter-spacing: 6px;
 }
 
 /* ── Scroll hint ── */
@@ -89,7 +87,7 @@ body.revealed .text-svg { opacity: 1; }
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.22em;
   color: #000;
